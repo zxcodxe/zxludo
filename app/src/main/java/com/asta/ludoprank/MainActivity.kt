@@ -3,7 +3,6 @@ package com.asta.ludoprank
 import android.app.Activity
 import android.os.Bundle
 import android.graphics.*
-import android.graphics.drawable.GradientDrawable
 import android.view.*
 import android.widget.*
 import kotlin.math.min
@@ -325,24 +324,6 @@ class MainActivity : Activity() {
             drawTokens(c)
         }
 
-        private fun rect(
-            c: Canvas,
-            x: Int,
-            y: Int,
-            color: Int
-        ) {
-            p.color = color
-            p.style = Paint.Style.FILL
-
-            c.drawRect(
-                ox+x*cell,
-                oy+y*cell,
-                ox+(x+1)*cell,
-                oy+(y+1)*cell,
-                p
-            )
-        }
-
         private fun drawBoard(c: Canvas) {
             p.style = Paint.Style.FILL
             p.color = Color.rgb(250,250,250)
@@ -381,7 +362,7 @@ class MainActivity : Activity() {
                 p.alpha = 255
             }
 
-            for ((i,q) in path.withIndex()) {
+            for ((_, q) in path.withIndex()) {
                 p.color = Color.WHITE
                 p.style = Paint.Style.FILL
 
@@ -463,7 +444,6 @@ class MainActivity : Activity() {
                 for (t in 0..3) {
                     val prog = g.pos[player][t]
 
-                    // FIX: starts[player] instead of starts
                     val pt = tokenPoint(
                         player,
                         t,
@@ -562,7 +542,7 @@ class MainActivity : Activity() {
         }
 
         override fun onTouchEvent(
-            e: android.view.MotionEvent
+            e: MotionEvent
         ): Boolean {
 
             if (e.action != MotionEvent.ACTION_UP)
