@@ -1,33 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.asta.ludoprank">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@android:drawable/ic_menu_gallery"
         android:label="Ludo King"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@android:drawable/ic_menu_gallery"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.NoActionBar">
+        android:theme="@android:style/Theme.NoTitleBar">
 
-        <!-- Splash / MainActivity -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="intent.action.MAIN" />
-                <category android:name="intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- Home Activity -->
-        <activity android:name=".HomeActivity" android:exported="false" />
-
-        <!-- Mode Select & Prank Activity -->
-        <activity android:name=".ModeSelectActivity" android:exported="false" />
-
-        <!-- Game Board Activity -->
-        <activity android:name=".GameActivity" android:exported="false" />
 
     </application>
 
